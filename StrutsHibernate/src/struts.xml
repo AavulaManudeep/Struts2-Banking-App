@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<include file="struts-default.xml"/>
+   <!-- <constant name = "struts.devMode" value = "true" /> -->
+   <package name = "default" extends = "struts-default">
+   
+      <action name ="register" class = "com.hiberconn.Actions" method="Registration" >
+         <result name = "success">/signin.jsp</result>
+          <result name = "input">/index.jsp</result>
+      </action>
+      
+        <action name ="signin" class = "com.hiberconn.SigninAction" method="Login">
+         <result name = "Admin">/Admindash.jsp</result>
+          <result name = "Customer">/customer.jsp</result>
+         <result name = "input">/signin.jsp</result>
+      </action>
+       
+      <action name="createaccount" class="com.hiberconn.AdminActions" method = "CreateAccount">
+      <result name = "success">/success.jsp</result>
+         <result name = "input">/signin.jsp</result>
+      </action>
+      
+      
+      <action name="deposit" class="com.hiberconn.DepWithAction" method = "Deposit">
+      <result name = "success">/Deposit.jsp</result>
+         <result name = "Customer">/customer.jsp</result>
+          <result name = "Admin">/Admindash.jsp</result>
+           <result name = "input">/error.jsp</result>
+      </action>
+      
+        <action name="withdraw" class="com.hiberconn.DepWithAction" method = "Withdraw">
+      <result name = "success">/Withdraw.jsp</result>
+         <result name = "Customer">/customer.jsp</result>
+          <result name = "Admin">/Admindash.jsp</result>
+           <result name = "input">/error.jsp</result>
+      </action>
+      
+       <action name="transfer" class="com.hiberconn.TransferAction" method = "Transfering">
+      <result name = "success">/transfer.jsp</result>
+         <result name = "Customer">/customer.jsp</result>
+          <result name = "Admin">/Admindash.jsp</result>
+           <result name = "input">/error.jsp</result>
+      </action>
+      
+      <action name="delete" class="com.hiberconn.AdminActions" method = "DeleteAccount">
+      <result name = "success">/delete.jsp</result>
+         <result name = "Customer">/customer.jsp</result>
+          <result name = "Admin">/Admindash.jsp</result>
+           <result name = "input">/error.jsp</result>
+      </action>
+   </package>
+   <!-- more packages can be listed here -->
+
+</struts>
